@@ -5,5 +5,7 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: example
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/1-schema.sql
     ports:
       - '5432:5432'
